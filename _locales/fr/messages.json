@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "Image Format Saver",
+    "description": "Nom de l'extension"
+  },
+  "extDescription": {
+    "message": "Enregistrer n'importe quelle image au format JPG, PNG ou WebP avec contrôle qualité et redimensionnement",
+    "description": "Description de l'extension"
+  },
+  "cmdSaveDefault": {
+    "message": "Sauvegarder l'image dans le format par défaut",
+    "description": "Description du raccourci clavier"
+  }
+}

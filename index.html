@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Format Saver — Chrome Extension</title>
+  <meta name="description" content="Save any image as JPG, PNG or WebP with quality control and resizing options. Free Chrome extension, 100% private.">
+  <style>
+    :root {
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-600: #4b5563;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      color: var(--gray-800);
+      line-height: 1.6;
+      background: var(--gray-50);
+    }
+
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 0;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    nav { display: flex; align-items: center; justify-content: space-between; }
+    nav .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--gray-900); font-weight: 700; font-size: 18px; }
+    nav .logo img { width: 32px; height: 32px; }
+    nav .links { display: flex; gap: 24px; }
+    nav .links a { text-decoration: none; color: var(--gray-600); font-size: 14px; font-weight: 500; }
+    nav .links a:hover { color: var(--blue); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--gray-600);
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+    .cta:hover { background: var(--blue-dark); }
+
+    /* Features */
+    .features {
+      padding: 60px 0;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: var(--gray-900);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .feature-card .icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--gray-900);
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--gray-600);
+    }
+
+    /* Privacy banner */
+    .privacy-banner {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 0 auto 60px;
+      max-width: 640px;
+    }
+    .privacy-banner h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--gray-900);
+    }
+    .privacy-banner p {
+      font-size: 14px;
+      color: var(--gray-600);
+      margin-bottom: 16px;
+    }
+    .privacy-banner a {
+      color: var(--blue);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .privacy-banner a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-600);
+    }
+    footer a { color: var(--gray-600); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--blue); }
+    footer .copyright { margin-top: 12px; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .hero { padding: 48px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="./">
+          <img src="../icons/icon48.png" alt="Image Format Saver icon" onerror="this.style.display='none'">
+          Image Format Saver
+        </a>
+        <div class="links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://github.com/fdebailleul/image-format-saver" id="github-link">GitHub</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Save any image in the format you want</h1>
+      <p>Convert and download images as JPG, PNG, or WebP directly from any webpage. Control quality, resize on the fly, and batch-convert entire pages. 100% private &mdash; everything runs locally.</p>
+      <a class="cta" href="https://chrome.google.com/webstore" id="cws-link">Install from Chrome Web Store</a>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon">&#x1F5BC;</div>
+            <h3>Multiple Formats</h3>
+            <p>Save images as JPG, PNG, or WebP with a single right-click. Choose your preferred default format in the settings.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">&#x2699;</div>
+            <h3>Quality Control</h3>
+            <p>Adjust output quality from 10% to 100% for JPG and WebP formats. Preview estimated file size before saving.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">&#x1F4D0;</div>
+            <h3>Resize Options</h3>
+            <p>Set a maximum width or scale by percentage. Ideal for preparing images for web, email, or social media.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">&#x1F4E6;</div>
+            <h3>Batch Conversion</h3>
+            <p>Scan all images on a page, select the ones you need, and download them all at once as a ZIP archive.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">&#x2328;</div>
+            <h3>Keyboard Shortcut</h3>
+            <p>Use <kbd>Alt+Shift+S</kbd> to instantly save the focused image in your default format. Fast and convenient.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">&#x1F512;</div>
+            <h3>100% Private</h3>
+            <p>No data ever leaves your browser. No analytics, no tracking, no external servers. Your images stay yours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="privacy-banner">
+        <h3>Your privacy matters</h3>
+        <p>Image Format Saver processes everything locally in your browser. We collect zero data. No analytics, no tracking, no external API calls.</p>
+        <a href="privacy.html">Read our full Privacy Policy &rarr;</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="https://github.com/fdebailleul/image-format-saver/issues">Support</a>
+      </div>
+      <div class="copyright">&copy; 2026 Image Format Saver. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

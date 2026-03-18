@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <h1>Image Format Saver</h1>
+
+    <!-- Onglets -->
+    <div class="tabs">
+      <button class="tab active" data-tab="settings">Paramètres</button>
+      <button class="tab" data-tab="batch">Lot (batch)</button>
+    </div>
+
+    <!-- === Onglet Paramètres === -->
+    <div id="tab-settings" class="tab-content active">
+      <section>
+        <label>Format par défaut (raccourci <kbd>Alt+Shift+S</kbd>)</label>
+        <select id="defaultFormat">
+          <option value="save-jpg">JPG</option>
+          <option value="save-png">PNG</option>
+          <option value="save-webp" selected>WebP</option>
+        </select>
+      </section>
+
+      <section>
+        <label>Qualité : <span id="qualityValue">92</span>%</label>
+        <input type="range" id="quality" min="10" max="100" value="92">
+        <p class="hint">Applicable au JPG et WebP (pas au PNG)</p>
+      </section>
+
+      <section>
+        <label>Redimensionnement</label>
+        <select id="resizeMode">
+          <option value="none">Aucun (taille originale)</option>
+          <option value="maxWidth">Largeur maximale</option>
+          <option value="percentage">Pourcentage</option>
+        </select>
+
+        <div id="maxWidthGroup" class="resize-option hidden">
+          <label>Largeur max (px)</label>
+          <input type="number" id="maxWidth" value="1920" min="100" max="10000">
+        </div>
+
+        <div id="percentageGroup" class="resize-option hidden">
+          <label>Pourcentage : <span id="percentageValue">100</span>%</label>
+          <input type="range" id="percentage" min="10" max="100" value="100">
+        </div>
+      </section>
+
+      <!-- Estimation de taille -->
+      <section id="estimateSection" class="hidden">
+        <h3>Aperçu</h3>
+        <div class="estimate-info">
+          <div>Original : <strong id="originalSize">—</strong></div>
+          <div>Estimé : <strong id="estimatedSize">—</strong></div>
+          <div>Réduction : <strong id="reduction">—</strong></div>
+        </div>
+        <button id="btnEstimate" class="btn secondary">Estimer la taille</button>
+      </section>
+
+      <section>
+        <label class="toggle-label">
+          <input type="checkbox" id="notifToggle">
+          Activer les notifications
+        </label>
+      </section>
+
+      <button id="btnSave" class="btn primary">Sauvegarder les paramètres</button>
+      <div id="statusMessage" class="status hidden"></div>
+    </div>
+
+    <!-- === Onglet Batch === -->
+    <div id="tab-batch" class="tab-content">
+      <section>
+        <label>Format de conversion</label>
+        <select id="batchFormat">
+          <option value="image/jpeg">JPG</option>
+          <option value="image/png">PNG</option>
+          <option value="image/webp" selected>WebP</option>
+        </select>
+      </section>
+
+      <button id="btnScan" class="btn primary">Scanner les images de la page</button>
+
+      <div id="scanResults" class="hidden">
+        <div class="batch-actions">
+          <span id="imageCount">0 images</span>
+          <label><input type="checkbox" id="selectAll" checked> Tout sélectionner</label>
+        </div>
+        <div id="imageGrid" class="image-grid"></div>
+        <button id="btnBatchConvert" class="btn primary">Convertir et télécharger</button>
+      </div>
+
+      <div id="batchProgress" class="hidden">
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <p id="progressText">Conversion en cours…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

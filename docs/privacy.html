@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Image Format Saver</title>
+  <meta name="description" content="Privacy policy for the Image Format Saver Chrome extension.">
+  <style>
+    :root { --blue: #2563eb; --gray-50: #f9fafb; --gray-200: #e5e7eb; --gray-600: #4b5563; --gray-800: #1f2937; --gray-900: #111827; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      color: var(--gray-800);
+      line-height: 1.7;
+      background: var(--gray-50);
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .back { display: inline-block; margin-bottom: 24px; font-size: 14px; color: var(--gray-600); }
+    h1 { font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 4px; }
+    .updated { font-size: 14px; color: var(--gray-600); margin-bottom: 32px; }
+    h2 { font-size: 18px; font-weight: 700; color: var(--gray-900); margin-top: 32px; margin-bottom: 12px; }
+    p { font-size: 15px; margin-bottom: 12px; }
+    ul { padding-left: 24px; margin-bottom: 12px; }
+    li { font-size: 15px; margin-bottom: 8px; }
+    .highlight {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+    .highlight p { margin: 0; font-weight: 500; }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--gray-200); font-size: 13px; color: var(--gray-600); }
+  </style>
+</head>
+<body>
+  <a class="back" href="./">&larr; Back to homepage</a>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: March 18, 2026</p>
+
+  <div class="highlight">
+    <p>Image Format Saver does <strong>not</strong> collect, store, transmit, or share any personal data. All image processing happens locally in your browser.</p>
+  </div>
+
+  <h2>1. Information We Collect</h2>
+  <p>We collect <strong>no information whatsoever</strong>. Image Format Saver does not collect personal data, usage data, browsing history, or any other information about you or your activity.</p>
+
+  <h2>2. How the Extension Works</h2>
+  <p>When you convert an image, the extension fetches the image directly from its source server to your browser, converts it using the HTML5 Canvas API, and saves the result to your computer. No intermediary server is involved at any stage of this process.</p>
+
+  <h2>3. Permissions Explained</h2>
+  <p>Chrome extensions must declare the permissions they use. Here is what each permission does and why it is needed:</p>
+  <ul>
+    <li><strong>contextMenus</strong> — Adds a "Save image as…" entry to the right-click menu when you click on an image.</li>
+    <li><strong>activeTab</strong> — Allows interaction with the current tab only when you explicitly trigger an action (right-click or keyboard shortcut). The extension cannot access your tabs in the background.</li>
+    <li><strong>scripting</strong> — Injects a conversion script into the active tab to process the image using the Canvas API. This script runs only when you trigger a conversion.</li>
+    <li><strong>downloads</strong> — Saves the converted image file to your computer's downloads folder.</li>
+    <li><strong>storage</strong> — Stores your preferences (output format, quality level, resize settings) locally on your device using Chrome's Storage API. This data never leaves your device.</li>
+    <li><strong>host_permissions (&lt;all_urls&gt;)</strong> — Required so the extension can fetch images hosted on any website for format conversion. Without this permission, cross-origin images could not be processed. Images are fetched directly from the source server to your browser.</li>
+    <li><strong>notifications</strong> (optional) — Displays a brief notification when a conversion completes or fails. You can enable or disable this in the extension settings at any time.</li>
+  </ul>
+
+  <h2>4. Data Storage</h2>
+  <p>The only data stored by the extension is your user preferences (output format, quality level, resize mode). These are saved locally on your device via the Chrome Storage API and are never transmitted anywhere.</p>
+  <p>No images are stored by the extension. Converted images are saved directly to your downloads folder and are not retained by the extension.</p>
+
+  <h2>5. Third-Party Services</h2>
+  <p>Image Format Saver does not communicate with any external server, analytics service, advertising network, or third-party API. No data of any kind leaves your browser.</p>
+
+  <h2>6. Children's Privacy</h2>
+  <p>This extension does not collect any data from any user, including children under the age of 13. Since no data is collected, no special provisions are needed under COPPA or similar regulations.</p>
+
+  <h2>7. Changes to This Policy</h2>
+  <p>If we make changes to this privacy policy, the updated version will be posted on this page with a new "Last updated" date. Significant changes will also be noted in the extension's update notes on the Chrome Web Store.</p>
+
+  <h2>8. Contact</h2>
+  <p>If you have questions or concerns about this privacy policy, you can:</p>
+  <ul>
+    <li>Open an issue on the <a href="https://github.com/fdebailleul/image-format-saver/issues">GitHub repository</a></li>
+    <li>Use the support link on the Chrome Web Store listing</li>
+  </ul>
+
+  <footer>
+    <p>&copy; 2026 Image Format Saver &middot; <a href="./">Home</a> &middot; <a href="terms.html">Terms of Use</a></p>
+  </footer>
+</body>
+</html>
