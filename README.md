@@ -17,7 +17,7 @@ A Chrome extension that lets you convert and download images from any webpage in
 
 ### From the Chrome Web Store
 
-👉 [Install Image Format Saver](https://chrome.google.com/webstore) *(link to update)*
+👉 [Install Image Format Saver](https://chromewebstore.google.com/detail/image-format-saver/cpfpbdgpkjbnkidjddelkibfooplpjih)
 
 ### From source (developer mode)
 
